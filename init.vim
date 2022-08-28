@@ -47,5 +47,6 @@ nnoremap <silent> <a-down> :m +1<CR>
 nnoremap <silent> <a-up> :m -2<CR>
 imap jj <ESC>
 imap <C-c> "+y
+nnoremap <C-p> :bd<CR>
 
 colorscheme tokyonight
