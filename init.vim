@@ -16,10 +16,8 @@ call plug#begin()
 call plug#end()
 
 " Configurações do lexima.vim
-
 let g:indentguides_spacechar = '▏'
 let g:indentguides_tabchar = '▏'
-
 " Fim das configurações do lexima.vim
 
 let g:airline#extensions#tabline#enabled = 1
@@ -27,26 +25,25 @@ let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#switch_buffers_and_tabs = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
 
-"NerdTree
 let NERDTreeShowHidden=1
-
-"NerdCommet
-filetype plugin on
-let g:NERDSpaceDelims = 1
-let g:NERDSpaceDelims = 'left'
-nnoremap cc <Plug>NERDCommenterInvert
-
 nnoremap <C-n> :NERDTreeToggle<CR>
+
+filetype plugin on
+let g:NERDSpaceDelims = 'left'
+let g:NERDSpaceDelims = 1
+map cc <Plug>NERDCommenterInvert
+
 nnoremap <C-s> :w!<CR>
 nnoremap <C-q> :qa<CR>
 nnoremap <C-h> :bprevious<CR>
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-i> mzgg=G`z
 nnoremap <C-x> :q<CR>
-nnoremap <silent> <a-down> :m +1<CR>
-nnoremap <silent> <a-up> :m -2<CR>
+nnoremap <silent> <a-j> :m +1<CR>
+nnoremap <silent> <a-k> :m -2<CR>
 imap jj <ESC>
 imap <C-c> "+y
 nnoremap <C-p> :bd<CR>
 
+set background=dark
 colorscheme tokyonight
