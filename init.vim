@@ -13,6 +13,7 @@ call plug#begin()
   Plug 'preservim/nerdcommenter'
   Plug 'mattn/emmet-vim'
   Plug 'dense-analysis/ale'
+  Plug 'morhetz/gruvbox'
 call plug#end()
 
 " Configurações do lexima.vim
@@ -46,4 +47,5 @@ imap <C-c> "+y
 nnoremap <C-p> :bd<CR>
 
 set background=dark
-colorscheme tokyonight
+" colorscheme tokyonight
+colorscheme gruvbox
