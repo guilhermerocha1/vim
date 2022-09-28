@@ -14,8 +14,30 @@ call plug#begin()
   Plug 'mattn/emmet-vim'
   Plug 'dense-analysis/ale'
   Plug 'morhetz/gruvbox'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'arzg/vim-substrata'
 call plug#end()
+
+" Configurações do CoC.nvim
+
+inoremap <silent><expr> <cr>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <TAB> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+autocmd FileType scss setl iskeyword+=@-@
+
+" Fim das configurações do CoC.nvim
 
 " Configurações do lexima.vim
 let g:indentguides_spacechar = '▏'
@@ -45,8 +67,9 @@ nnoremap <silent> <a-j> :m +1<CR>
 nnoremap <silent> <a-k> :m -2<CR>
 imap jj <ESC>
 imap <C-c> "+y
-nnoremap <C-p> :bd<CR>
+nnoremap <C-p> :bdelete<CR>
 
 set background=dark
 " colorscheme tokyonight
-colorscheme substrata 
+" colorscheme gruvbox
+colorscheme substrata
