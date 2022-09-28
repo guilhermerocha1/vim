@@ -14,6 +14,7 @@ call plug#begin()
   Plug 'mattn/emmet-vim'
   Plug 'dense-analysis/ale'
   Plug 'morhetz/gruvbox'
+  Plug 'arzg/vim-substrata'
 call plug#end()
 
 " Configurações do lexima.vim
@@ -48,4 +49,4 @@ nnoremap <C-p> :bd<CR>
 
 set background=dark
 " colorscheme tokyonight
-colorscheme gruvbox
+colorscheme substrata 
